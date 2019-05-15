@@ -7,7 +7,7 @@
 //
 
 #import "BaseViewController.h"
-#import "ViewController.h"
+
 @interface BaseViewController ()
 // MARK:- KScreenRotation
 /// 屏幕锁定方向 默认(UIInterfaceOrientationPortrait)
@@ -23,10 +23,7 @@
     
     self.view.backgroundColor = [UIColor cyanColor];
     //监听设备旋转 改变 视图 对应位置
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(deviceOrientationDidChange)
-                                                 name:UIDeviceOrientationDidChangeNotification
-                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deviceOrientationDidChange) name:UIDeviceOrientationDidChangeNotification object:nil];
     // 默认锁定屏幕
     _lockScreen = YES;
     // 默认屏幕方向
@@ -35,23 +32,6 @@
     _isHiddeStatusBar = NO;
     
 }
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    
-    [self rotatScreenTo:_lockOrientation];
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-    [super viewWillDisappear:animated];
-    // 获取当前屏幕方向
-    [self deviceOrientationDidChange];
-    // 存储当前屏幕方向
-    _lockOrientation = _interOrientation;
-}
-
 
 - (void)setLockScreen:(BOOL)lockScreen
 {
@@ -66,9 +46,26 @@
         _lockScreen = lockScreen;
         // 获取当前屏幕方向
         [self deviceOrientationDidChange];
-        
+        // 旋转屏幕
         [self rotatScreenTo:_interOrientation];
     }
+}
+
+/**
+ 监听的屏幕旋转
+ 用来控制横竖屏时调整视图位置
+ */
+- (void)deviceOrientationDidChange
+{
+    if (_lockScreen) {
+        // 锁定情况
+        _interOrientation = _lockOrientation;
+    } else {
+        [self getCurrenrInterfaceOrientation];
+    }
+    NSLog(@"屏幕旋转->%ld",_interOrientation);
+    // 可实现屏幕旋转回调
+
 }
 
 /**
@@ -99,20 +96,6 @@
     }
 }
 
-
-/**
- 监听的屏幕旋转
- 用来控制横竖屏时调整视图位置
- */
-- (void)deviceOrientationDidChange
-{
-    if (_lockScreen) {
-        // 锁定情况
-        _interOrientation = _lockOrientation;
-    } else {
-        [self getCurrenrInterfaceOrientation];
-    }
-}
 
 - (void)getCurrenrInterfaceOrientation
 {

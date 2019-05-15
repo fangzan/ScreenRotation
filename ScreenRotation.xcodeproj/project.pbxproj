@@ -15,8 +15,6 @@
 		10CC886C2289030400C41C50 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 10CC886B2289030400C41C50 /* main.m */; };
 		10CC88742289032700C41C50 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10CC88732289032700C41C50 /* BaseViewController.m */; };
 		10CC88772289033400C41C50 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10CC88762289033400C41C50 /* FirstViewController.m */; };
-		10CC887A2289033D00C41C50 /* TwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10CC88792289033D00C41C50 /* TwoViewController.m */; };
-		10CC888722890D5600C41C50 /* TabbarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10CC888622890D5600C41C50 /* TabbarViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,10 +32,6 @@
 		10CC88732289032700C41C50 /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		10CC88752289033400C41C50 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
 		10CC88762289033400C41C50 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		10CC88782289033D00C41C50 /* TwoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TwoViewController.h; sourceTree = "<group>"; };
-		10CC88792289033D00C41C50 /* TwoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TwoViewController.m; sourceTree = "<group>"; };
-		10CC888522890D5600C41C50 /* TabbarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabbarViewController.h; sourceTree = "<group>"; };
-		10CC888622890D5600C41C50 /* TabbarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabbarViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,14 +66,10 @@
 			children = (
 				10CC885C228902FF00C41C50 /* AppDelegate.h */,
 				10CC885D228902FF00C41C50 /* AppDelegate.m */,
-				10CC888522890D5600C41C50 /* TabbarViewController.h */,
-				10CC888622890D5600C41C50 /* TabbarViewController.m */,
 				10CC88722289032700C41C50 /* BaseViewController.h */,
 				10CC88732289032700C41C50 /* BaseViewController.m */,
 				10CC88752289033400C41C50 /* FirstViewController.h */,
 				10CC88762289033400C41C50 /* FirstViewController.m */,
-				10CC88782289033D00C41C50 /* TwoViewController.h */,
-				10CC88792289033D00C41C50 /* TwoViewController.m */,
 				10CC885F228902FF00C41C50 /* ViewController.h */,
 				10CC8860228902FF00C41C50 /* ViewController.m */,
 				10CC8862228902FF00C41C50 /* Main.storyboard */,
@@ -161,11 +151,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				10CC888722890D5600C41C50 /* TabbarViewController.m in Sources */,
 				10CC8861228902FF00C41C50 /* ViewController.m in Sources */,
 				10CC88742289032700C41C50 /* BaseViewController.m in Sources */,
 				10CC88772289033400C41C50 /* FirstViewController.m in Sources */,
-				10CC887A2289033D00C41C50 /* TwoViewController.m in Sources */,
 				10CC886C2289030400C41C50 /* main.m in Sources */,
 				10CC885E228902FF00C41C50 /* AppDelegate.m in Sources */,
 			);

@@ -16,6 +16,8 @@
 
 @property (nonatomic, strong) UIButton *pushBtn;
 
+@property (nonatomic, strong) UITextField *tf;
+
 @end
 
 @implementation FirstViewController
@@ -47,6 +49,12 @@
     [self.lockBtn setTitle:self.lockScreen?@"屏幕锁定状态":@"屏幕解锁状态" forState:UIControlStateNormal];
     [self.lockBtn addTarget:self action:@selector(didClickLock:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.lockBtn];
+
+    
+    self.tf = [[UITextField alloc] init];
+    self.tf.borderStyle = UITextBorderStyleRoundedRect;
+    [self.view addSubview:self.tf];
+    
 }
 
 - (void)viewWillLayoutSubviews{
@@ -64,6 +72,9 @@
     
     self.lockBtn.frame = CGRectMake(K_MArgin, 150, CGRectGetWidth(self.view.frame) - 2*K_MArgin, 40);
     
+    self.tf.frame = CGRectMake(K_MArgin, 250, CGRectGetWidth(self.view.frame) - 2*K_MArgin, 40);
+    
+    
     UIInterfaceOrientation aInterOrientation = [[UIApplication sharedApplication] statusBarOrientation];
     if (aInterOrientation == UIInterfaceOrientationPortrait) {
         NSLog(@"12");
@@ -77,6 +88,11 @@
         self.lockBtn.backgroundColor = [UIColor greenColor];
     }
 
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [super touchesBegan:touches withEvent:event];
+    [self.view endEditing:YES];
 }
 
 - (void)leftAction
@@ -97,8 +113,8 @@
         self.lockScreen = NO;
         [sender setTitle:@"屏幕解锁状态" forState:UIControlStateNormal];
     } else {
-        self.lockScreen = YES;
         
+        self.lockScreen = YES;
         [sender setTitle:@"锁定屏幕状态" forState:UIControlStateNormal];
     }
 }

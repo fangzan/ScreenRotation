@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "TabbarViewController.h"
+#import "FirstViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -20,8 +20,9 @@
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
-    TabbarViewController *tabbarVC = [[TabbarViewController alloc] init];
-    [self.window setRootViewController:tabbarVC];
+    FirstViewController *firstVC = [[FirstViewController alloc] init];
+    UINavigationController *firstNav = [[UINavigationController alloc] initWithRootViewController:firstVC];
+    [self.window setRootViewController:firstNav];
     return YES;
 }
 
